@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AOS - scroll 라이브러리</title>
+
+    <!-- 1. css cdn 연결 -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .wrap{
+            background-color: lavender;
+            height: 5000px;
+            position: relative;
+        }
+        .box{
+            width: 300px;
+            height: 500px;
+            background-color: steelblue;
+            position: absolute;
+        }
+        .box:nth-child(even){
+            left: 20%;
+        }
+        .box:nth-child(odd){
+            right: 20%;
+        }
+        .box:nth-child(1){
+            top: 15%;
+        }
+        .box:nth-child(2){
+            top: 30%;
+        }
+        .box:nth-child(3){
+            top: 45%;
+        }
+        .box:nth-child(4){
+            top: 60%;
+        }
+        .box:nth-child(5){
+            top: 75%;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- 3. 태그에 데이터 설정해주기 -->
+    <div class="wrap">
+        <div class="box" data-aos="fade-up" data-aos-easing="ease-in-back" data-aos-duration="300" data-aos-offset="300"></div>
+        <div class="box" data-aos="fade-down" data-aos-duration="1000" data-aos-offset="300"></div>
+        <div class="box" data-aos="fade-right" data-aos-duration="1000" data-aos-offset="300"></div>
+        <div class="box" data-aos="zoom-in" data-aos-duration="1000" data-aos-offset="300"></div>
+        <div class="box" data-aos="flip-left" data-aos-duration="1000" data-aos-offset="300"></div>
+
+        <!-- data-aos : 어떤식으로 움직일것인지 -->
+        <!-- data-aos-easing : 어떤 모양으로 움직일것인지 -->
+        <!-- data-aos-duration : 진행시간 -->
+        <!-- data-aos-offset : 진행 위치 -->
+    </div>
+
+    <!-- 2. script cdn 연결 -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // 4. 스크립트로 AOS 실행시키기
+        AOS.init();
+    </script>
+</body>
+</html>
